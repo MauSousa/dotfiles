@@ -33,3 +33,5 @@ alias dimla="docker image ls -a"
 alias dclsa="docker container ls -a"
 alias dcd="docker compose down"
 alias dcu="docker compose up"
+
+alias nv="cd ~/.config/nvim/"
