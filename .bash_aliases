@@ -11,7 +11,7 @@ alias bashrc="source ~/.bashrc"
 alias rm="rm -iv"
 alias s="kitty +kitten ssh"
 alias sail="./vendor/bin/sail"
-alias sudo="sudo "
+alias lara="cd ~/Dev/php-projects/laracasts-php-for-beginners/"
 
 #  Git
 alias pull="git pull"
