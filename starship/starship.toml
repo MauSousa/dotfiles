@@ -8,8 +8,6 @@ scan_timeout = 10
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
 success_symbol = "[❯](yellow)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-# success_symbol = "[❯](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-#success_symbol = "[∮](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 error_symbol = "[✗](bold red) "
 
 # Disable the package module, hiding it from the prompt completely
@@ -17,7 +15,6 @@ error_symbol = "[✗](bold red) "
 disabled = false
 style = "119"
 symbol = "📦"
-# symbol = " "
 
 [container]
 format = '[$symbol \[$name\]]($style) '
@@ -34,9 +31,6 @@ truncate_to_repo = false
 style = "117"
 read_only = " "
 home_symbol = "~"
-#home_symbol = " "
-#home_symbol = "ξ"
-#home_symbol = " "
 
 # Golang
 [golang]
@@ -50,37 +44,17 @@ style = "9"
 # Git Status
 [git_status]
 style = "117"
-# conflicted = " "
 conflicted = "🚩"
-# conflicted = "🏳"
-ahead = ""
-# ahead = "🚗💨"
-# ahead = "🏎💨"
-behind = "  "
-diverged = "😵"
-# up_to_date = " "
-up_to_date = ""
-# up_to_date = ""
-# up_to_date = ""
-#up_to_date = "✓"
-untracked = '[?$count](red)'
-# untracked = "🤔"
-# untracked = "?"
-# untracked = "🤷‍"
-# stashed = " "
-stashed = "📦"
-# modified = " "
-modified = '[U$count](yellow)'
-# modified = '📜[++\($count\)](green)'
-# modified = "📝"
-staged = '[S++$count](green)'
-renamed = '[R++$count](blue)'
-# renamed = "👅"
-# deleted = " "
-# deleted = " "
-deleted = '[D$count](bold red)'
-# deleted = "🗑️ "
-# deleted = "🗑"
+ahead = " Ahead "
+behind = " Behind "
+diverged = " 😵 "
+up_to_date = " [Up to date] "
+untracked = ' [Untracked->$count](red) '
+stashed = " [Stashed->$count] "
+modified = ' [Modified->$count](yellow) '
+staged = ' [Staged->$count](green) '
+renamed = ' [Renamed->$count](blue) '
+deleted = ' [Deleted->$count](bold red) '
 
 [aws]
 symbol = "☁️ "
@@ -93,11 +67,9 @@ symbol = " "
 
 [docker_context]
 disabled = false
-format = "via [ $context](blue bold) "
+format = "[  $context](blue bold) "
 only_with_files = true
-# symbol = "🐳"
 detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
-# symbol = " "
 
 [elixir]
 symbol = " "
@@ -137,11 +109,11 @@ symbol = " "
 symbol = "ﯣ "
 
 [lua]
-format = "via [ ($version)](blue) "
+format = "[ ($version)](blue) "
 
 [c]
 style = "149"
 
 [php]
-format = 'via [🐘 $version](147 bold) '
+format = '[🐘 $version](147 bold) '
 
