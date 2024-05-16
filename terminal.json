@@ -1,0 +1,51 @@
+{
+    "child": {
+        "child1": {
+            "directory": "\/home\/augusto",
+            "height": 651,
+            "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+            "readOnly": false,
+            "synchronizedInput": true,
+            "type": "Terminal",
+            "uuid": "0e590c9e-71b3-4277-863c-dc8e8b862035",
+            "width": 1904
+        },
+        "child2": {
+            "child1": {
+                "directory": "\/home\/augusto",
+                "height": 343,
+                "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+                "readOnly": false,
+                "synchronizedInput": true,
+                "type": "Terminal",
+                "uuid": "5cd774c9-edb3-4201-badc-1e7e795e18b0",
+                "width": 822
+            },
+            "child2": {
+                "directory": "\/home\/augusto",
+                "height": 343,
+                "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+                "readOnly": false,
+                "synchronizedInput": true,
+                "type": "Terminal",
+                "uuid": "7194c634-920c-4ae0-a05d-db1f4af9f48e",
+                "width": 1081
+            },
+            "orientation": 0,
+            "position": 43,
+            "ratio": 0.431722689075630273,
+            "type": "Paned"
+        },
+        "orientation": 1,
+        "position": 65,
+        "ratio": 0.654271356783919567,
+        "type": "Paned"
+    },
+    "height": 995,
+    "name": "${title}",
+    "synchronizedInput": false,
+    "type": "Session",
+    "uuid": "a1f2d617-3090-4cb6-89e2-42243601f171",
+    "version": "1.0",
+    "width": 1904
+}
