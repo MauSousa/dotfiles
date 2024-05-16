@@ -12,6 +12,8 @@ alias rm="rm -iv"
 alias s="kitty +kitten ssh"
 alias sail="./vendor/bin/sail"
 alias lara="cd ~/Dev/php-projects/laracasts-php-for-beginners/"
+alias dot="cd ~/.config/.dotfiles/"
+alias files="bash ~/.config/.dotfiles/files.sh"
 
 #  Git
 alias pull="git pull"
