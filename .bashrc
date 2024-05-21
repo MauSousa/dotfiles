@@ -26,6 +26,8 @@ fi
 
 unset rc
 
+fastfetch
+
 export EDITOR=/usr/bin/nvim
 
 source ~/.bash_aliases
