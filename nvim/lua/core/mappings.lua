@@ -52,7 +52,11 @@ M.general = {
         },
 
         -- DBUI
-        ["<C-m>"] = { "<cmd>DBUIToggle<CR>", "Toogle DBUI" },
+        ["<S-m>"] = { "<cmd>DBUIToggle<CR>", "Toogle DBUI" },
+        -- ["<A-m>"] = { "<leader>S", "Execute Query" },
+
+        -- LazyGit
+        ["<leader>gg"] = { "<cmd>LazyGit<CR>", desc = "LazyGit" }
     },
 
     t = {
