@@ -14,6 +14,7 @@ alias sail="./vendor/bin/sail"
 alias lara="cd ~/Dev/php-projects/laracasts-php-for-beginners/"
 alias dot="cd ~/.config/.dotfiles/"
 alias files="bash ~/.config/.dotfiles/files.sh"
+alias cl="printf '\E[H\E[3J'"
 
 #  Git
 alias pull="git pull"
