@@ -69,6 +69,7 @@ M.ui = {
       { "  Bookmarks", "Spc m a", "Telescope marks" },
       { "  Themes", "Spc t h", "Telescope themes" },
       { "  Mappings", "Spc c h", "NvCheatsheet" },
+      { "Exit", "Spc q", "Exit neovim" },
     },
   },
 
