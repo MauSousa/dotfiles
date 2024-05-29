@@ -16,13 +16,12 @@ export PATH
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-if [ -d ~/.bashrc.d ]; then
-	for rc in ~/.bashrc.d/*; do
-		if [ -f "$rc" ]; then
-			. "$rc"
-		fi
-	done
-fi
+# if [ -d ~/.bashrc.d ]; then
+# 	for rc in ~/.bashrc.d/*; do
+# 		if [ -f "$rc" ]; then
+# 			. "$rc"
+# 	done
+# fi
 
 unset rc
 
@@ -30,7 +29,14 @@ fastfetch
 
 export EDITOR=/usr/bin/nvim
 
-source ~/.bash_aliases
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
+if [ -f ~/.bash_functions ]; then
+    source ~/.bash_functions
+fi
+
 export GPG_TTY=$(tty)
 
 # fnm
@@ -51,3 +57,11 @@ export STARSHIP_CACHE=~/.config/starship
 eval "$(starship init bash)"
 . "$HOME/.cargo/env"
 
+
+# pnpm
+export PNPM_HOME="/home/augusto/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
