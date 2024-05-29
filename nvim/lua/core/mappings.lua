@@ -19,6 +19,7 @@ M.general = {
 
     n = {
         ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
+        ["<leader>q"] = { "<ESC>:x <CR>", "Close neovim" },
         -- switch between windows
         ["<C-h>"] = { "<C-w>h", "Window left" },
         ["<C-l>"] = { "<C-w>l", "Window right" },
