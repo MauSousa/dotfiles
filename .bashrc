@@ -37,12 +37,17 @@ if [ -f ~/.bash_functions ]; then
     source ~/.bash_functions
 fi
 
+# tty
 export GPG_TTY=$(tty)
+
+# composer
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # fnm
 export PATH="/home/augusto/.local/share/fnm:$PATH"
 eval "$(fnm env)"
 
+# go
 export GOPATH="$HOME/go"
 PATH="$GOPATH/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
@@ -56,7 +61,6 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export STARSHIP_CACHE=~/.config/starship
 eval "$(starship init bash)"
 . "$HOME/.cargo/env"
-
 
 # pnpm
 export PNPM_HOME="/home/augusto/.local/share/pnpm"
