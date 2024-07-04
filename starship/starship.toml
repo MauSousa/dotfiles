@@ -50,7 +50,7 @@ behind = " Behind "
 diverged = " 😵 "
 up_to_date = " Up to date "
 untracked = ' [Untracked->$count](red) '
-stashed = " [Stashed->$count] "
+stashed = ' 📥 '
 modified = ' [Modified->$count](yellow) '
 staged = ' [Staged->$count](green) '
 renamed = ' [Renamed->$count](blue) '
@@ -115,5 +115,5 @@ format = "[ ($version)](blue) "
 style = "149"
 
 [php]
-format = '[🐘 $version](147 bold) '
+format = '[🐘$version](147 bold) '
 
