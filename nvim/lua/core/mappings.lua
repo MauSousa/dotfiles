@@ -19,7 +19,7 @@ M.general = {
 
     n = {
         ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
-        ["<leader>q"] = { "<ESC>:x <CR>", "Close neovim" },
+        ["<A-q>"] = { "<ESC>:x <CR>", "Close neovim" },
         -- switch between windows
         ["<C-h>"] = { "<C-w>h", "Window left" },
         ["<C-l>"] = { "<C-w>l", "Window right" },
@@ -28,6 +28,8 @@ M.general = {
 
         -- save
         ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
+        ["\\"] = { "<ESC>:wq <CR>", "Save and quit" },
+
 
         -- Copy all
         ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
