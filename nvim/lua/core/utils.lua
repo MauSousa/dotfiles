@@ -106,27 +106,11 @@ M.lazy_load = function(plugin)
                         if plugin == "nvim-lspconfig" then
                             vim.cmd "silent! do FileType"
                         end
-                    end, 0)
+                    end)
                 else
                     require("lazy").load { plugins = plugin }
                 end
             end
-        end,
-    })
-
-    vim.api.autocmd({
-        -- Trigger on BufNewFile and BufRead events for *.blade.php files
-        type = {
-            create = vim.buf.event.newfile,
-            read = vim.buf.event.read,
-        },
-        pattern = "*.blade.php",
-        config = function()
-            -- Get the current buffer
-            local current_buffer = vim.api.nvim_get_current_buf()
-
-            -- Set filetype to php for the current buffer
-            vim.api.filetype.set(current_buffer, "php")
         end,
     })
 end
