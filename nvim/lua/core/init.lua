@@ -53,6 +53,9 @@ opt.scrolloff = 10
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
 
+-- obsidian conceallevel
+vim.opt.conceallevel = 1
+
 g.mapleader = " "
 
 -- disable some default providers
