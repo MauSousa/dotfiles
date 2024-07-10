@@ -17,6 +17,7 @@ alias dot="cd ~/.config/.dotfiles/"
 alias files="bash ~/.config/.dotfiles/files.sh"
 alias cl="printf '\E[H\E[3J'"
 alias vuef="cd ~/Dev/vue-courses/vue-fernando-herrera"
+alias obsi="cd ~/Documents/MyV/"
 
 #  Git
 alias pull="git pull"
