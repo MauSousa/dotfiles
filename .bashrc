@@ -23,7 +23,7 @@ export PATH
 # 	done
 # fi
 
-unset rc
+# unset rc
 
 fastfetch
 
@@ -56,10 +56,6 @@ export PATH=$PATH:/usr/local/go/bin
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
-# starship
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-export STARSHIP_CACHE=~/.config/starship
-eval "$(starship init bash)"
 . "$HOME/.cargo/env"
 
 # pnpm
@@ -69,3 +65,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# starship
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export STARSHIP_CACHE=~/.config/starship
+eval "$(starship init bash)"
