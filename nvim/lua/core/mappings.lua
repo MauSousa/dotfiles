@@ -19,7 +19,7 @@ M.general = {
 
     n = {
         ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
-        ["<A-q>"] = { "<ESC>:x <CR>", "Close neovim" },
+        ["<A-q>"] = { "<ESC>:q <CR>", "Close neovim" },
         -- switch between windows
         ["<C-h>"] = { "<C-w>h", "Window left" },
         ["<C-l>"] = { "<C-w>l", "Window right" },
@@ -266,7 +266,7 @@ M.nvimtree = {
 
     n = {
         -- toggle
-        ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+        ["<leader>n"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
 
         -- focus
         ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
@@ -285,6 +285,10 @@ M.telescope = {
         ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
         ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
         ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
+
+        -- file browser
+        ["<leader>fj"] = { "<cmd> Telescope file_browser <CR>", "Open file browser with all files" },
+        ["<leader>fk"] = { "<cmd> Telescope file_browser path=%:p:h select_buffer=true <CR>", "Open file browser of the current buffer" },
 
         -- git
         ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
