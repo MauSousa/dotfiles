@@ -67,6 +67,7 @@ M.ui = {
       { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
       { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
       { "  Bookmarks", "Spc m a", "Telescope marks" },
+      { "  File Explorer", "Spc f j", "Telescope file_explorer" },
       { "  Themes", "Spc t h", "Telescope themes" },
       { "  Mappings", "Spc c h", "NvCheatsheet" },
       { "Exit", "Alt q", "Exit neovim" },
