@@ -54,9 +54,33 @@ local options = {
     extensions = {
         extensions = {
             file_browser = {
+                hidden = { file_browser = false, folder_browser = false },
+                follow_symlinks = true,
                 theme = "ivy",
                 -- disables netrw and use telescope-file-browser in its place
                 hijack_netrw = true,
+                path = vim.loop.cwd(),
+                cwd = vim.loop.cwd(),
+                cwd_to_path = false,
+                grouped = false,
+                files = true,
+                add_dirs = true,
+                depth = 1,
+                auto_depth = false,
+                select_buffer = false,
+                respect_gitignore = vim.fn.executable "fd" == 1,
+                no_ignore = false,
+                browse_files = require("telescope._extensions.file_browser.finders").browse_files,
+                browse_folders = require("telescope._extensions.file_browser.finders").browse_folders,
+                hide_parent_dir = false,
+                collapse_dirs = false,
+                prompt_path = false,
+                quiet = false,
+                dir_icon = "",
+                dir_icon_hl = "Default",
+                display_stat = { date = true, size = true, mode = true },
+                use_fd = true,
+                git_status = true,
                 mappings = {
                     ["i"] = {
                         -- your custom insert mode mappings
