@@ -1,5 +1,14 @@
 # .bashrc
 
+# History config
+HISTSIZE=10000
+HISTFILESIEZE=10000000
+shopt -s histappend
+HISTCONTROL=ignoreboth
+HISTIGNORE='ls:clear:history:pwd:nvim'
+HISTTIMEFORMAT='%F %T '
+shopt -s cmdhist
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
