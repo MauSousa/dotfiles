@@ -19,6 +19,7 @@ alias cl="printf '\E[H\E[3J'"
 alias vuef="cd ~/Dev/vue-courses/vue-fernando-herrera"
 alias obsi="cd ~/Documents/MyV/"
 alias nv="cd ~/.config/nvim/"
+alias laraj="cd ~/Dev/laravel-courses/laravel-juan-de-la-torre/"
 
 #  Git
 alias pull="git pull"

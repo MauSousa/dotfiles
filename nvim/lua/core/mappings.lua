@@ -62,7 +62,8 @@ M.general = {
         ["<leader>gg"] = { "<cmd>LazyGit<CR>", desc = "LazyGit" },
 
         -- Markdown Preview
-        ["<C-p>"] = { "<cmd>MarkdownPreview<CR>", desc = "Start Markdown Preview Server"}
+        ["<C-p>"] = { "<cmd>MarkdownPreview<CR>", desc = "Start Markdown Preview Server"},
+
     },
 
     t = {
