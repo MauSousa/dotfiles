@@ -79,3 +79,6 @@ esac
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export STARSHIP_CACHE=~/.config/starship
 eval "$(starship init bash)"
+
+# zoxide
+eval "$(zoxide init bash)"
