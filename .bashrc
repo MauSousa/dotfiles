@@ -34,8 +34,6 @@ export PATH
 
 # unset rc
 
-fastfetch
-
 export EDITOR=/usr/bin/nvim
 
 if [ -f ~/.bash_aliases ]; then
@@ -82,3 +80,6 @@ eval "$(starship init bash)"
 
 # zoxide
 eval "$(zoxide init bash)"
+
+# fastfetch
+macchina
