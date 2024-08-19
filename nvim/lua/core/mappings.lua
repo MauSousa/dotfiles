@@ -26,6 +26,9 @@ M.general = {
         ["<C-j>"] = { "<C-w>j", "Window down" },
         ["<C-k>"] = { "<C-w>k", "Window up" },
 
+        -- Close split because wezterm uses ctrl-w to close tab, my fault
+        ["S-w"] = { "<C-w>q", "Close split" },
+
         -- save
         ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
         ["\\"] = { "<ESC>:wq <CR>", "Save and quit" },
