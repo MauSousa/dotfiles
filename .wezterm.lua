@@ -25,32 +25,32 @@ config.keys = {
     },
     {
         key = 'n',
-        mods = 'SHIFT',
+        mods = 'CTRL|SHIFT',
         action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
     },
     {
         key = 'm',
-        mods = 'SHIFT',
+        mods = 'CTRL|SHIFT',
         action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
     },
     {
         key = 'h',
-        mods = 'SHIFT',
+        mods = 'CTRL|SHIFT',
         action = wezterm.action.ActivatePaneDirection 'Left',
     },
     {
         key = 'j',
-        mods = 'SHIFT',
+        mods = 'CTRL|SHIFT',
         action = wezterm.action.ActivatePaneDirection 'Down',
     },
     {
         key = 'k',
-        mods = 'SHIFT',
+        mods = 'CTRL|SHIFT',
         action = wezterm.action.ActivatePaneDirection 'Up',
     },
     {
         key = 'l',
-        mods = 'SHIFT',
+        mods = 'CTRL|SHIFT',
         action = wezterm.action.ActivatePaneDirection 'Right',
     },
 }
