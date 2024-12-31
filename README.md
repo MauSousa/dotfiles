@@ -19,3 +19,4 @@
     - volar
     - gopls
     - tailwindcss
+    - bashls
