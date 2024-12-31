@@ -65,6 +65,36 @@ function copy-terminal() {
     fi
 }
 
+function copy-sway() {
+    if [[ -d ~/.config/sway ]]; then
+        cp -r ~/.config/sway "$DOTFILES_DIR"
+    fi
+}
+
+function copy-waybar() {
+    if [[ -d ~/.config/waybar ]]; then
+        cp -r ~/.config/waybar "$DOTFILES_DIR"
+    fi
+}
+
+function copy-swaylock() {
+    if [[ -d ~/.config/swaylock ]]; then
+        cp -r ~/.config/swaylock "$DOTFILES_DIR"
+    fi
+}
+
+function copy-rofi() {
+    if [[ -d ~/.config/rofi ]]; then
+        cp -r ~/.config/rofi "$DOTFILES_DIR"
+    fi
+}
+
+function copy-dunst() {
+    if [[ -d ~/.config/dunst ]]; then
+        cp -r ~/.config/dunst "$DOTFILES_DIR"
+    fi
+}
+
 function copy-files() {
     copy-neovim
     copy-bash
@@ -74,6 +104,11 @@ function copy-files() {
     copy-wezterm
     copy-macchina
     copy-terminal
+    copy-sway
+    copy-waybar
+    copy-swaylock
+    copy-rofi
+    copy-dunst
 }
 
 echo "Copying files..."
