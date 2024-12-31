@@ -1,5 +1,5 @@
 # Inserts a blank line between shell prompts
-add_newline = false
+add_newline = true
 
 # Time commands
 command_timeout = 20000
@@ -9,6 +9,41 @@ scan_timeout = 10
 [character]                            # The name of the module we are configuring is "character"
 success_symbol = "[❯](yellow)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 error_symbol = "[✗](bold red) "
+
+# Directory
+[directory]
+truncation_length = 8
+truncate_to_repo = false
+style = "117"
+read_only = " "
+home_symbol = "~"
+
+#to display the hostname before the character line
+[hostname]
+ssh_only = false
+style = "italic blue"
+format = "[  $hostname]($style) in "
+disabled = false
+
+# Git Branch
+[git_branch]
+style = "9"
+
+# Git Status
+[git_status]
+format = '([$modified$untracked$staged$renamed$deleted$up_to_date$ahead_behind]($style) )'
+style = "117"
+conflicted = "🚩"
+ahead = "Ahead->$count"
+behind = "Behind->$count"
+diverged = "😵"
+stashed = '📥'
+up_to_date = "Up to date"
+modified = '[Modified->$count](yellow) '
+untracked = '[Untracked->$count](red) '
+staged = '[Staged->$count](green) '
+renamed = '[Renamed->$count](blue) '
+deleted = '[Deleted->$count](bold red) '
 
 # Disable the package module, hiding it from the prompt completely
 [package]
@@ -24,37 +59,10 @@ format = '[$symbol \[$name\]]($style) '
 symbol = " "
 style = "123"
 
-# Directory
-[directory]
-truncation_length = 8
-truncate_to_repo = false
-style = "117"
-read_only = " "
-home_symbol = "~"
-
 # Golang
 [golang]
 symbol = " "
 style = "189"
-
-# Git Branch
-[git_branch]
-style = "9"
-
-# Git Status
-[git_status]
-style = "117"
-conflicted = "🚩"
-ahead = " Ahead "
-behind = " Behind "
-diverged = " 😵 "
-up_to_date = " Up to date "
-untracked = ' [Untracked->$count](red) '
-stashed = ' 📥 '
-modified = ' [Modified->$count](yellow) '
-staged = ' [Staged->$count](green) '
-renamed = ' [Renamed->$count](blue) '
-deleted = ' [Deleted->$count](bold red) '
 
 [aws]
 symbol = "☁️ "
@@ -115,5 +123,5 @@ format = "[ ($version)](blue) "
 style = "149"
 
 [php]
-format = '[🐘$version](147 bold) '
+format = '[🐘 $version](147 bold) '
 
