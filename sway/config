@@ -9,16 +9,19 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
-font pango:Iosevka Nerd Font 10
+# font
+font pango:IosevkaTerm Nerd Font 10
 
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 # Recommends: foot
 set $term wezterm
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -36,14 +39,28 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 # Requires: desktop-backgrounds-compat, swaybg
 # output * bg /usr/share/backgrounds/default.png fill
 # output * bg ~/Pictures/wallpapers/japan/samurai-shadow.jpg fill
-output * bg ~/Pictures/wallpapers/berserk/76995.jpg fill
+# output * bg ~/Pictures/wallpapers/berserk/76995.jpg fill
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output DP-1 resolution 1920x1080 transform 270 position 1920,0
+
+output DP-1 {
+    background ~/Pictures/wallpapers/berserk/76995.jpg fill
+    resolution 1920x1080 transform 270 position 1920,0
+}
+
+output HDMI-A-1 {
+    background ~/Pictures/wallpapers/japan/samurai-shadow.jpg fill
+    resolution 1920x1200
+}
+
+output DP-2 {
+    background ~/Pictures/wallpapers/helsing/858048.jpg fill
+    resolution 1920x1080
+}
 
 ### Idle configuration
 #
