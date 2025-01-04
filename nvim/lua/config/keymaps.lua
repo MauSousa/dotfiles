@@ -22,9 +22,16 @@ vim.keymap.set("n", "<space>od", function()
 end, { desc = "Floating diagnostic" })
 vim.keymap.set("n", "<C-c>", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
 vim.keymap.set("n", "<C-s", "<cmd>w<CR>", { desc = "Save file" })
-vim.keymap.set("n", "<space>bd", "<cmd>bd<CR>", { desc = "Close buffer" })
+
+-- Supermaven
 vim.keymap.set("n", "<space>st", "<cmd>SupermavenStart<CR>", { desc = "Start supermaven" })
 vim.keymap.set("n", "<space>ss", "<cmd>SupermavenStop<CR>", { desc = "Stop supermaven" })
+
+-- Oil.nvim
+vim.keymap.set("n", "<space>-", "<cmd>e .<CR>", { desc = "Shows oil.nvim" })
+
+-- gitsigns
+vim.keymap.set("n", "<space>gbl", "<cmd>Gitsigns blame_line<CR>", { desc = "Blame line" })
 
 -- visual
 vim.keymap.set("v", "<space>x", ":lua<CR>", { desc = "Source lua config" })
