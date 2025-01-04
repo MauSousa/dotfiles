@@ -54,12 +54,12 @@ output DP-1 {
 
 output HDMI-A-1 {
     background ~/Pictures/wallpapers/japan/samurai-shadow.jpg fill
-    resolution 1920x1200
+    resolution 1920x1200 position 4920,0
 }
 
 output DP-2 {
-    background ~/Pictures/wallpapers/helsing/858048.jpg fill
-    resolution 1920x1080
+    background ~/Pictures/wallpapers/dark.png fill
+    resolution 1920x1080 position 3000,0
 }
 
 ### Idle configuration
