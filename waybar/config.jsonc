@@ -71,6 +71,7 @@
        "thunar": "Thunar",
        "spotify": " Spotify",
        "(.*).Keypunch": "Keypunch",
+       "(.*).Studio": "OBS Studio",
        },
     },
     "sway/scratchpad": {
