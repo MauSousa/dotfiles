@@ -15,7 +15,8 @@ error_symbol = "[✗](bold red) "
 truncation_length = 8
 truncate_to_repo = false
 style = "117"
-read_only = " "
+read_only = " "
+# read_only = " "
 home_symbol = "~"
 
 #to display the hostname before the character line
