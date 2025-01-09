@@ -142,7 +142,7 @@ return {
             {
               name = "@vue/typescript-plugin",
               -- location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
-              location = "~/.local/share/fnm/node-versions/v22.12.0/installation/lib/node_modules/@vue/language-server/",
+              location = "/home/mau/.local/share/fnm/node-versions/v22.12.0/installation/lib/node_modules/@vue/language-server/",
               -- location = "~/.local/share/fnm/node-versions/v22.12.0/installation/lib/node_modules/@vue/language-server",
               languages = { "vue" },
             },
