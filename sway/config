@@ -145,6 +145,9 @@ output DP-2 {
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
+    # disable sloppy focus
+    focus_follows_mouse no
 #
 # Workspaces:
 #
