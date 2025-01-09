@@ -23,6 +23,7 @@
         "power-profiles-daemon",
         "cpu",
         "memory",
+        "custom/diskspace",
         "temperature",
         "backlight",
         "sway/language",
@@ -130,7 +131,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{used}/{total} GiB",
+        "format": "{used}GB->{total}GB",
     },
     "temperature": {
          "thermal-zone": 2,
@@ -220,6 +221,12 @@
         "tooltip": true,
         "interval": 3600,
         "exec": "$HOME/.config/waybar/scripts/weather.sh 2> /dev/null"
+    },
+    "custom/diskspace": {
+        "format": "{} ",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "$HOME/.config/waybar/scripts/diskspace.sh 2> /dev/null"
     },
     "custom/power": {
         "format" : "⏻ ",
