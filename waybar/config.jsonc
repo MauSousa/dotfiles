@@ -73,6 +73,8 @@
        "spotify": " Spotify",
        "(.*).Keypunch": "Keypunch",
        "(.*).Studio": "OBS Studio",
+       "(.*).zathura": "Zathura",
+       "org.telegram.desktop": "Telegram",
        },
     },
     "sway/scratchpad": {
@@ -120,7 +122,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%H:%M:%S %d-%m-%Y}",
+        "format": "{:%H:%M:%S %d-%m-%Y} ",
         "timezone": "America/Mexico_City",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 1,
