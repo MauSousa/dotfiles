@@ -12,7 +12,9 @@ shopt -s cmdhist
 alias ls="exa --icons --group-directories-first --header -al --time-style long-iso"
 alias exat="exa -aT --icons --color=always --group-directories-first"
 alias bashrc="source ~/.bashrc"
-alias fupdate="sudo dnf update"
+alias fupdate="sudo dnf update && flatpak update"
+alias crd="composer run dev"
+alias run15="ollama run deepseek-r1:1.5b"
 
 # zoxide
 eval "$(zoxide init bash)"
@@ -43,6 +45,8 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
+
+# php
 export PATH="/home/mau/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/mau/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
@@ -71,8 +75,19 @@ esac
 
 # <<< juliaup initialize <<<
 
+# pnpm
+export PNPM_HOME="/home/mau/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # starship
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
-export STARSHIP_CACHE=~/.config/starship
+export STARSHIP_CACHE=~/.config/starship/cache
 eval "$(starship init bash)"
-
