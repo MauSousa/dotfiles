@@ -35,3 +35,14 @@ vim.keymap.set("n", "<space>gbl", "<cmd>Gitsigns blame_line<CR>", { desc = "Blam
 
 -- visual
 vim.keymap.set("v", "<space>x", ":lua<CR>", { desc = "Source lua config" })
+
+-- gentleman dots
+-- Delete all buffers but the current one
+vim.keymap.set(
+  "n",
+  "<space>bq",
+  '<Esc>:%bdelete|edit #|normal`"<CR>',
+  { desc = "Delete other buffers but the current one" }
+)
+
+vim.keymap.set("n", "<space>tc", "<cmd>CloakToggle<CR>", { desc = "Toggles cloak" })
