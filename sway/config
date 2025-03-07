@@ -100,11 +100,20 @@ output DP-2 {
     # Start firefox
     bindsym $mod+f exec firefox
 
+    # Start zen browser
+    bindsym $mod+z exec flatpak run app.zen_browser.zen
+
     # Start brave
     bindsym $mod+Shift+b exec brave-browser
 
     # Kill focused window
     bindsym $mod+q kill
+
+    # Shutsdown the computer
+    bindsym $mod+Shift+q exec "shutdown now"
+
+    # Reboot the computer
+    bindsym $mod+Shift+r exec "shutdown -r now"
 
     # Start your launcher
     bindsym $mod+d exec $menu
@@ -121,6 +130,7 @@ output DP-2 {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
 #
 # Moving around:
 #
