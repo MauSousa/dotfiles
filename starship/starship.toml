@@ -124,7 +124,7 @@ format = '[🐘 $version](147 bold) '
 
 [bun]
 symbol = ' '
-format = '[$symbol($version )]($style)'
+format = '[$symbol($version )](white bold)'
 #
 # [c]
 # format = '[$symbol($version(-$name))]($style)'
