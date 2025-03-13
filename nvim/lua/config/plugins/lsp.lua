@@ -134,32 +134,33 @@ return {
         end,
       }
 
-      -- -- js
-      -- require("lspconfig").ts_ls.setup {
-      --   init_options = {
-      --     hostInfo = "neovim",
-      --     plugins = {
-      --       {
-      --         name = "@vue/typescript-plugin",
-      --         -- location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
-      --         location = "/home/mau/.local/share/fnm/node-versions/v22.12.0/installation/lib/node_modules/@vue/language-server/",
-      --         -- location = "~/.local/share/fnm/node-versions/v22.12.0/installation/lib/node_modules/@vue/language-server",
-      --         languages = { "vue" },
-      --       },
-      --     },
-      --     preferences = { disableSuggestions = true },
-      --   },
-      --   filetypes = {
-      --     "javascript",
-      --     "typescript",
-      --     "typescriptreact",
-      --     "javascriptreact",
-      --     "javascript.jsx",
-      --   },
-      --   cmd = { "typescript-language-server", "--stdio" },
-      --   root_dir = util.root_pattern("tsconfig.json", "package.json", "jsconfig.json", ".git"),
-      --   single_file_support = true
-      -- }
+      -- js
+      require("lspconfig").ts_ls.setup {
+        init_options = {
+          hostInfo = "neovim",
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              -- location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+              location = "/home/mau/.local/share/fnm/node-versions/v22.12.0/installation/lib/node_modules/@vue/language-server/",
+              -- location = "~/.local/share/fnm/node-versions/v22.12.0/installation/lib/node_modules/@vue/language-server",
+              languages = { "javascript", "typescript", "vue" },
+            },
+          },
+          preferences = { disableSuggestions = true },
+        },
+        filetypes = {
+          "javascript",
+          "typescript",
+          "typescriptreact",
+          "javascriptreact",
+          "javascript.jsx",
+          "vue"
+        },
+        cmd = { "typescript-language-server", "--stdio" },
+        root_dir = util.root_pattern("tsconfig.json", "package.json", "jsconfig.json", ".git"),
+        single_file_support = true
+      }
 
       -- -- vuels
       -- require("lspconfig").vuels.setup {
