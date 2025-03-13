@@ -9,7 +9,6 @@ vim.keymap.set("n", "gD", "<cmd>.lua vim.lsp.buf.declaration()<CR>",
   { noremap = true, silent = true, desc = "Go to declaration" })
 vim.keymap.set("n", "gd", "<cmd>.lua vim.lsp.buf.definition()<CR>",
   { noremap = true, silent = true, desc = "Go to definition" })
-vim.keymap.set("n", "<space>ll", "<cmd>!vendor/bin/pint -q <CR>", { desc = "Runs laravel/pint" })
 vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true, desc = "Window left" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true, desc = "Window right" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true, desc = "Window up" })
