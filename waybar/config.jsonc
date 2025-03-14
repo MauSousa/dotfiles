@@ -221,7 +221,7 @@
     "custom/weather": {
         "format": "{}",
         "tooltip": true,
-        "interval": 3600,
+        "interval": 7200,
         "exec": "$HOME/.config/waybar/scripts/weather.sh 2> /dev/null"
     },
     "custom/diskspace": {
