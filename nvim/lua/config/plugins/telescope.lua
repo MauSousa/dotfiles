@@ -14,6 +14,12 @@ return {
       --     "vendor",
       --   }
       -- }
+      Defaults = {
+        file_ignore_patterns = {
+          "node_modules",
+          "vendor",
+        }
+      }
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<space>ff', builtin.find_files, { desc = 'Telescope find files' })
       vim.keymap.set('n', '<space>fa', "<cmd>Telescope find_files follow=true no_ignore=true hidden=true <CR>",
