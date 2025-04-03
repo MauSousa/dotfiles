@@ -15,6 +15,7 @@ alias bashrc="source ~/.bashrc"
 alias fupdate="sudo dnf update && flatpak update"
 alias crd="composer run dev"
 alias run15="ollama run deepseek-r1:1.5b"
+alias pestp="./vendor/bin/pest --parallel 2>/dev/null"
 
 # zoxide
 eval "$(zoxide init bash)"
