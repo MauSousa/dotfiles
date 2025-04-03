@@ -75,6 +75,7 @@
        "(.*).Studio": "OBS Studio",
        "(.*).zathura": "Zathura",
        "org.telegram.desktop": "Telegram",
+       "vivaldi-stable": "🌐 Vivaldi Browser",
        },
     },
     "sway/scratchpad": {
