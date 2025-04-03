@@ -10,7 +10,7 @@ local state = {
 local function create_floating_window(opts)
   opts = opts or {}
   local width = opts.width or math.floor(vim.o.columns * 0.8)
-  local height = opts.height or math.floor(vim.o.lines * 0.8)
+  local height = opts.height or math.floor(vim.o.lines * 0.4)
 
   -- Calculate the position to center the window
   local col = math.floor((vim.o.columns - width) / 2)
@@ -55,4 +55,5 @@ end
 -- Example usage:
 -- Create a floating window with default dimensions
 vim.api.nvim_create_user_command("Floaterminal", toggle_terminal, {})
-vim.keymap.set("n", '<leader>ft', '<cmd>Floaterminal<CR>', { desc = "Opens floating terminal" })
+vim.keymap.set("n", '<A-i>', '<cmd>Floaterminal<CR>', { desc = "Opens floating terminal" })
+vim.keymap.set("i", '<A-i>', '<Esc><cmd>Floaterminal<CR>', { desc = "Opens floating terminal" })
