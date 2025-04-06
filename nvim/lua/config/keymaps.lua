@@ -43,3 +43,4 @@ vim.keymap.set("n", "<space>bq", '<Esc>:%bdelete|edit #|normal`"<CR>', {
 )
 
 vim.keymap.set("n", "<space>tc", "<cmd>CloakToggle<CR>", { desc = "Toggles cloak" })
+vim.keymap.set("n", "<space>tft", "<cmd>TailwindFoldToggle<CR>", { desc = "Toggles tailwind classes" })
