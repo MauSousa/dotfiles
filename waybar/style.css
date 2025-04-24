@@ -280,7 +280,7 @@ label:focus {
     color: #740864;
     padding: 0 2px;
     /*margin: 0 2px;*/
-    min-width: 44px;
+    min-width: 84px;
 }
 
 #keyboard-state {

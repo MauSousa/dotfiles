@@ -50,6 +50,9 @@
     //         "default": ""
     //     }
     // },
+    "sway/language": {
+        "format": "{short} {variant}"
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
