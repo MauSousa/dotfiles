@@ -1,5 +1,6 @@
 -- insert
 vim.keymap.set("i", "jk", "<ESC>")
+vim.keymap.set("i", "tn", "<ESC>")
 
 -- normal
 vim.keymap.set("n", "<space>h", "<cmd>noh <CR>", { desc = "Clear highlight search" })
