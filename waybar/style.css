@@ -172,6 +172,7 @@ label:focus {
 #cpu {
     /*background-color: #2ecc71;*/
     /*color: #000000;*/
+    padding: 0;
 }
 
 #memory {
@@ -197,6 +198,13 @@ label:focus {
 #pulseaudio {
     /*background-color: #f1c40f;*/
     /*color: #000000;*/
+    padding: 1px;
+}
+
+#user {
+    /*background-color: #f1c40f;*/
+    /*color: #000000;*/
+    padding-right: 5px;
 }
 
 #pulseaudio.muted {
@@ -216,7 +224,7 @@ label:focus {
 #custom-media {
     /*background-color: #66cc99;*/
     /*color: #2a5c45;*/
-    min-width: 100px;
+    min-width: 500px;
 }
 
 #custom-media.custom-spotify {
@@ -279,9 +287,9 @@ label:focus {
 #language {
     /*background: #00b093;*/
     /*color: #740864;*/
-    padding: 0 2px;
+    /*padding: 0 2px;*/
     /*margin: 0 2px;*/
-    min-width: 48px;
+    min-width: 18px;
 }
 
 #keyboard-state {
@@ -336,10 +344,10 @@ label:focus {
 #custom-weather {
     /*background-color: #0069d4;*/
     color: #fff;
-    padding: 0px 10px;
+    /*padding: 0px 10px;*/
 }
 
 #custom-diskspace{
     /*background-color: #003f5c;*/
-    padding: 0px 10px;
+    padding-right: 5px;
 }

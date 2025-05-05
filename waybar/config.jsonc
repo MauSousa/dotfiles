@@ -10,15 +10,16 @@
     "modules-left": [
         "sway/workspaces",
         "sway/mode",
-        "sway/scratchpad"
+        "sway/scratchpad",
+        "custom/media"
     ],
     "modules-center": [
         "sway/window"
     ],
     "modules-right": [
         "idle_inhibitor",
+        "user",
         "pulseaudio",
-        "custom/media",
         "network",
         "power-profiles-daemon",
         "cpu",
@@ -30,8 +31,8 @@
         "battery",
         "clock",
         "custom/weather",
-        "tray",
-        "custom/power",
+        "tray"
+        // "custom/power",
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -130,7 +131,7 @@
         "timezone": "America/Mexico_City",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 1,
-        "format-alt": "{:%d-%m-%Y}"
+        "format-alt": "{:%a %d %b %Y}"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -237,7 +238,7 @@
     "custom/power": {
         "format" : "⏻ ",
         "tooltip": false,
-        "spacing": 9,
+        // "spacing": 9,
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
         "menu-actions": {
@@ -246,5 +247,10 @@
             "suspend": "systemctl suspend",
             "hibernate": "systemctl hibernate"
         }
+    },
+    "user": {
+        "format": "up {work_H} hours {work_M} min",
+        "interval": 60,
+        "icon": true,
     }
 }
