@@ -27,7 +27,7 @@ config.keys = {
     action = wezterm.action.CloseCurrentPane { confirm = true },
   },
   {
-    key = 'n',
+    key = '<',
     mods = 'CTRL|SHIFT',
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
