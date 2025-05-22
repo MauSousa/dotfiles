@@ -6,7 +6,7 @@
     // "width": 1280, // Waybar width
     "spacing": 1, // Gaps between modules (4px)
     // Choose the order of the modules
-    "output": ["DP-2", "HDMI-A-1"], // Change this to your monitors
+    "output": ["DP-2", "DP-1"], // Change this to your monitors
     "modules-left": [
         "sway/workspaces",
         "sway/mode",
@@ -67,19 +67,19 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "sway/window": {
-       "format": "{app_id}",
-       "icon": true,
-       "rewrite": {
-       "(.*).firefox": "Mozilla Firefox",
-       "(.*).wezterm": "WezTerm",
-       "brave-browser": "Brave Browser",
-       "thunar": "Thunar",
-       "spotify": " Spotify",
-       "(.*).Keypunch": "Keypunch",
-       "(.*).Studio": "OBS Studio",
-       "(.*).zathura": "Zathura",
-       "org.telegram.desktop": "Telegram",
-       "vivaldi-stable": "🌐 Vivaldi Browser",
+            "format": "{app_id}",
+            "icon": true,
+            "rewrite": {
+            "(.*).firefox": "Mozilla Firefox",
+            "(.*).wezterm": "WezTerm",
+            "brave-browser": "Brave Browser",
+            "thunar": "Thunar",
+            "spotify": " Spotify",
+            "(.*).Keypunch": "Keypunch",
+            "(.*).Studio": "OBS Studio",
+            "(.*).zathura": "Zathura",
+            "org.telegram.desktop": "Telegram",
+            "vivaldi-stable": "🌐 Vivaldi Browser",
        },
     },
     "sway/scratchpad": {
