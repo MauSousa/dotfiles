@@ -11,7 +11,9 @@ local config = wezterm.config_builder()
 -- config.color_scheme = 'Apprentice (base16)'
 -- config.color_scheme = 'Apprentice (Gogh)'
 config.color_scheme = 'Catppuccin Macchiato'
+-- config.color_scheme = 'Tokyo Night Moon'
 -- config.color_scheme = 'Cobalt Neon'
+-- config.color_scheme = '3024 Day (Gogh)'
 
 -- Font
 config.font = wezterm.font('IosevkaTerm Nerd Font')
