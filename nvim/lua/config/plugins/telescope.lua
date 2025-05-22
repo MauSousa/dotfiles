@@ -5,7 +5,8 @@ return {
     tag = '0.1.8',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+      { "nvim-tree/nvim-web-devicons",              opts = {} },
     },
     config = function()
       -- local defaults = {
@@ -14,12 +15,6 @@ return {
       --     "vendor",
       --   }
       -- }
-      Defaults = {
-        file_ignore_patterns = {
-          "node_modules",
-          "vendor",
-        }
-      }
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<space>ff', builtin.find_files, { desc = 'Telescope find files' })
       vim.keymap.set('n', '<space>fa', "<cmd>Telescope find_files follow=true no_ignore=true hidden=true <CR>",

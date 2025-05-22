@@ -45,3 +45,11 @@ vim.keymap.set("n", "<space>bq", '<Esc>:%bdelete|edit #|normal`"<CR>', {
 
 vim.keymap.set("n", "<space>tc", "<cmd>CloakToggle<CR>", { desc = "Toggles cloak" })
 vim.keymap.set("n", "<space>tft", "<cmd>TailwindFoldToggle<CR>", { desc = "Toggles tailwind classes" })
+
+vim.keymap.set('i', '<C-E>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
+
+-- vim.keymap.set('i', '<C-I>', '<Plug>(copilot-accept-word)')

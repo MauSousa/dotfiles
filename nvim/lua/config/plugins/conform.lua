@@ -23,7 +23,7 @@ return {
       python = { "isort", "black" },
       javascript = { "prettierd", "prettier", stop_after_first = true },
       html = { "prettierd" },
-      -- json = { "jq" },
+      json = { "jq" },
       php = { "pint" },
       go = { "gofmt" },
     },
