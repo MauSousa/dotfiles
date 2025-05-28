@@ -102,6 +102,9 @@ input type:keyboard {
     # Start a terminal
     bindsym $mod+Return exec $term
 
+    # Start ghostty terminal
+    bindsym $mod+g exec ghostty
+
     # Start firefox
     bindsym $mod+f exec firefox
 
