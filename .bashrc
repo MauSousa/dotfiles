@@ -9,8 +9,8 @@ HISTTIMEFORMAT='%F %T '
 shopt -s cmdhist
 
 # Directory related
-alias ls="exa --icons --group-directories-first --header -al --time-style long-iso"
-alias exat="exa -aT --icons --color=always --group-directories-first"
+alias ls="eza --icons --group-directories-first --header -al --time-style long-iso"
+alias exat="eza -aT --icons --color=always --group-directories-first"
 alias bashrc="source ~/.bashrc"
 alias fupdate="sudo dnf update && flatpak update"
 alias crd="composer run dev"
@@ -59,8 +59,12 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
+# esp32 and esp8266
+export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
+
 # golang
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/tinygo/bin
 
 # >>> juliaup initialize >>>
 
