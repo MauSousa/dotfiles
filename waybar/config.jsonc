@@ -80,6 +80,8 @@
             "(.*).zathura": "Zathura",
             "org.telegram.desktop": "Telegram",
             "vivaldi-stable": "🌐 Vivaldi Browser",
+            "org.pulseaudio.pavucontrol": "Pavucontrol",
+            "com.mitchellh.ghostty": "Ghostty",
        },
     },
     "sway/scratchpad": {
