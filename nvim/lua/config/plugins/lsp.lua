@@ -398,6 +398,7 @@ return {
         cmd = { "zls" },
         filetypes = { "zig", "zir" },
         root_markers = { "zls.json", "build.zig", ".git" },
+        workspace_required = false,
       })
 
       vim.api.nvim_create_autocmd('LspAttach', {

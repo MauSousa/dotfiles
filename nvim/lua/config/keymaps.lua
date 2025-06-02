@@ -53,3 +53,5 @@ vim.keymap.set('i', '<C-A>', 'copilot#Accept("\\<CR>")', {
 })
 vim.g.copilot_no_tab_map = true
 vim.keymap.set('i', '<C-T>', '<Plug>(copilot-accept-word)')
+vim.keymap.set('n', '<space>cd', '<cmd>Copilot disable<CR>', { desc = "Disable copilot" })
+vim.keymap.set('n', '<space>ce', '<cmd>Copilot enable<CR>', { desc = "Enable copilot" })

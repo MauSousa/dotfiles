@@ -1,11 +1,16 @@
 return {
   {
     'saghen/blink.cmp',
+    -- build = 'cargo +nightly build --release',
 
-    dependencies = 'rafamadriz/friendly-snippets',
+    dependencies = {
+      'rafamadriz/friendly-snippets'
+    },
 
-    version = 'v0.7.6',
+    version = '1.*',
 
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
     opts = {
       keymap = { preset = 'default' },
 
@@ -15,7 +20,8 @@ return {
       },
 
       -- experimental signature help support
-      signature = { enabled = true }
+      signature = { enabled = true },
+      fuzzy = { implementation = 'prefer_rust_with_warning' },
     },
   },
 }
