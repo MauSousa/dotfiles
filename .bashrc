@@ -97,3 +97,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export STARSHIP_CACHE=~/.config/starship/cache
 eval "$(starship init bash)"
+. "$HOME/.cargo/env"
