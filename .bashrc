@@ -12,7 +12,7 @@ shopt -s cmdhist
 alias ls="eza --icons --group-directories-first --header -al --time-style long-iso"
 alias exat="eza -aT --icons --color=always --group-directories-first"
 alias bashrc="source ~/.bashrc"
-alias fupdate="sudo dnf update && flatpak update"
+alias fupdate="doas dnf update && flatpak update"
 alias crd="composer run dev"
 alias run15="ollama run deepseek-r1:1.5b"
 alias gemma3="ollama run gemma3"
