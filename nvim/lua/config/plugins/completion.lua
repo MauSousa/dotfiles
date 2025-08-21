@@ -19,6 +19,18 @@ return {
         nerd_font_variant = 'normal'
       },
 
+      -- sources = {
+      --   default = { "lsp", "path", "snippets", "buffer", "copilot" },
+      --   providers = {
+      --     copilot = {
+      --       name = "copilot",
+      --       module = "blink-cmp-copilot",
+      --       score_offset = 100,
+      --       async = true,
+      --     },
+      --   },
+      -- },
+
       -- experimental signature help support
       signature = { enabled = true },
       fuzzy = { implementation = 'prefer_rust_with_warning' },

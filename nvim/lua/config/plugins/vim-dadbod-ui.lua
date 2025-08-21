@@ -25,5 +25,5 @@ return {
       connection_error = '✕',
     }
   end,
-  vim.keymap.set('n', '<leader>db', ':DBUIToggle<CR>', { desc = 'DBUI' }),
+  -- vim.keymap.set('n', '<leader>db', ':DBUIToggle<CR>', { desc = 'DBUI' }),
 }

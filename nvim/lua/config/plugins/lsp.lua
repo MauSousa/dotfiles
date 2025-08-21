@@ -17,19 +17,6 @@ return {
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       local util = require("lspconfig/util")
 
-      -- enables all languages
-      vim.lsp.enable({
-        'zig',
-        'intelephense',
-        'tailwindcss',
-        'ts_ls',
-        'vue_ls',
-        'goalngci_lint_ls',
-        'gopls',
-        'bashls',
-        'lua_ls'
-      }, true)
-
       -- lua
       vim.lsp.config('lua_ls', {
         on_init = function(client)
@@ -275,31 +262,196 @@ return {
       --   end,
       -- })
 
-      -- vuels
-      vim.lsp.config('vue_ls', {
+      -- ts_ls
+      vim.lsp.config('ts_ls', {
         capabilities = capabilities,
-        cmd = { 'vue-language-server', '--stdio' },
-        filetypes = { 'javascript',
+        init_options = { hostInfo = 'neovim' },
+        cmd = { 'typescript-language-server', '--stdio' },
+        filetypes = {
+          'javascript',
           'javascriptreact',
           'javascript.jsx',
           'typescript',
           'typescriptreact',
           'typescript.tsx',
-          'vue'
         },
-        init_options = {
-          tsdk = '/home/mau/.local/share/fnm/node-versions/v22.12.0/installation/lib/node_modules/typescript/lib',
-          vue = {
-            hybridMode = false,
-          }
-        },
-        root_markers = { 'package.json' },
-        before_init = function(_, config)
-          if config.init_options and config.init_options.typescript and config.init_options.typescript.tsdk == '' then
-            config.init_options.typescript.tsdk = util.get_typescript_server_path(config.root_dir)
+        root_dir = function(bufnr, on_dir)
+          -- The project root is where the LSP can be started from
+          -- As stated in the documentation above, this LSP supports monorepos and simple projects.
+          -- We select then from the project root, which is identified by the presence of a package
+          -- manager lock file.
+          local project_root_markers = { 'package-lock.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb', 'bun.lock' }
+          -- Give the root markers equal priority by wrapping them in a table
+          local project_root = vim.fs.root(bufnr, { project_root_markers })
+          if not project_root then
+            return
           end
+
+          on_dir(project_root)
+        end,
+        handlers = {
+          -- handle rename request for certain code actions like extracting functions / types
+          ['_typescript.rename'] = function(_, result, ctx)
+            local client = assert(vim.lsp.get_client_by_id(ctx.client_id))
+            vim.lsp.util.show_document({
+              uri = result.textDocument.uri,
+              range = {
+                start = result.position,
+                ['end'] = result.position,
+              },
+            }, client.offset_encoding)
+            vim.lsp.buf.rename()
+            return vim.NIL
+          end,
+        },
+        commands = {
+          ['editor.action.showReferences'] = function(command, ctx)
+            local client = assert(vim.lsp.get_client_by_id(ctx.client_id))
+            local file_uri, position, references = unpack(command.arguments)
+
+            local quickfix_items = vim.lsp.util.locations_to_items(references, client.offset_encoding)
+            vim.fn.setqflist({}, ' ', {
+              title = command.title,
+              items = quickfix_items,
+              context = {
+                command = command,
+                bufnr = ctx.bufnr,
+              },
+            })
+
+            vim.lsp.util.show_document({
+              uri = file_uri,
+              range = {
+                start = position,
+                ['end'] = position,
+              },
+            }, client.offset_encoding)
+
+            vim.cmd('botright copen')
+          end,
+        },
+        on_attach = function(client, bufnr)
+          -- ts_ls provides `source.*` code actions that apply to the whole file. These only appear in
+          -- `vim.lsp.buf.code_action()` if specified in `context.only`.
+          vim.api.nvim_buf_create_user_command(bufnr, 'LspTypescriptSourceAction', function()
+            local source_actions = vim.tbl_filter(function(action)
+              return vim.startswith(action, 'source.')
+            end, client.server_capabilities.codeActionProvider.codeActionKinds)
+
+            vim.lsp.buf.code_action({
+              context = {
+                only = source_actions,
+              },
+            })
+          end, {})
         end,
       })
+
+      -- vuels
+      vim.lsp.config('vue_ls', {
+        capabilities = capabilities,
+        cmd = { 'vue-language-server', '--stdio' },
+        on_init = function(client)
+          client.handlers['tsserver/request'] = function(_, result, context)
+            local ts_clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = 'ts_ls' })
+            local vtsls_clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = 'vtsls' })
+            local clients = {}
+
+            vim.list_extend(clients, ts_clients)
+            vim.list_extend(clients, vtsls_clients)
+
+            if #clients == 0 then
+              vim.notify('Could not find `ts_ls` or `vtsls` lsp client, required by `vue_ls`.', vim.log.levels.ERROR)
+              return
+            end
+            local ts_client = clients[1]
+
+            local param = unpack(result)
+            local id, command, payload = unpack(param)
+            ts_client:exec_cmd({
+              title = 'vue_request_forward', -- You can give title anything as it's used to represent a command in the UI, `:h Client:exec_cmd`
+              command = 'typescript.tsserverRequest',
+              arguments = {
+                command,
+                payload,
+              },
+            }, { bufnr = context.bufnr }, function(_, r)
+              local response_data = { { id, r and r.body } }
+              ---@diagnostic disable-next-line: param-type-mismatch
+              client:notify('tsserver/response', response_data)
+            end)
+          end
+        end,
+        filetypes = {
+          -- 'javascript',
+          -- 'javascriptreact',
+          -- 'javascript.jsx',
+          -- 'typescript',
+          -- 'typescriptreact',
+          -- 'typescript.tsx',
+          'vue'
+        },
+        -- init_options = {
+        --   tsdk = '/home/mau/.local/share/fnm/node-versions/v22.12.0/installation/lib/node_modules/typescript/lib',
+        --   vue = {
+        --     hybridMode = false,
+        --   }
+        -- },
+        root_markers = { 'package.json' },
+        -- before_init = function(_, config)
+        --   if config.init_options and config.init_options.typescript and config.init_options.typescript.tsdk == '' then
+        --     config.init_options.typescript.tsdk = util.get_typescript_server_path(config.root_dir)
+        --   end
+        -- end,
+      })
+
+      -- vtsls
+      local vue_language_server_path =
+      '/home/mau/.local/share/fnm/node-versions/v22.12.0/installation/lib/node_modules/@vue/language-server'
+      local vue_plugin = {
+        name = '@vue/typescript-plugin',
+        location = vue_language_server_path,
+        languages = { 'vue' },
+        configNamespace = 'typescript',
+      }
+      local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact' }
+      vim.lsp.config('vtsls', {
+        capabilities = capabilities,
+        cmd = { "vtsls", "--stdio" },
+        settings = {
+          vtsls = {
+            tsserver = {
+              globalPlugins = {
+                vue_plugin,
+              },
+            },
+          },
+        },
+        filetypes = tsserver_filetypes,
+        -- root_markers = { 'package-lock.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb', 'bun.lock' }
+        root_dir = function(bufnr, on_dir)
+          local project_root_markers = { 'package-lock.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb', 'bun.lock' }
+          -- Give the root markers equal priority by wrapping them in a table
+          local project_root = vim.fs.root(bufnr, { project_root_markers })
+          if not project_root then
+            return
+          end
+
+          on_dir(project_root)
+        end,
+      })
+
+      -- ts_ls
+      -- local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
+      -- vim.lsp.config('ts_ls', {
+      --   capabilities = capabilities,
+      --   init_options = {
+      --     plugins = {
+      --       vue_plugin,
+      --     },
+      --   },
+      --   filetypes = tsserver_filetypes,
+      -- })
 
       -- golang ci
       vim.lsp.config('goalngci_lint_ls', {
@@ -399,6 +551,11 @@ return {
         filetypes = { "zig", "zir" },
         root_markers = { "zls.json", "build.zig", ".git" },
         workspace_required = false,
+        settings = {
+          zls = {
+            semantic_tokens = "partial",
+          }
+        }
       })
 
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -417,6 +574,20 @@ return {
           end
         end,
       })
+
+      -- enables all languages
+      vim.lsp.enable({
+        'zig',
+        'intelephense',
+        'tailwindcss',
+        'ts_ls',
+        'vue_ls',
+        'vtsls',
+        'goalngci_lint_ls',
+        'gopls',
+        'bashls',
+        'lua_ls'
+      }, true)
     end,
   }
 }

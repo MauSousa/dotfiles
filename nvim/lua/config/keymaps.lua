@@ -47,11 +47,11 @@ vim.keymap.set("n", "<space>tc", "<cmd>CloakToggle<CR>", { desc = "Toggles cloak
 vim.keymap.set("n", "<space>tft", "<cmd>TailwindFoldToggle<CR>", { desc = "Toggles tailwind classes" })
 
 -- github copilot
-vim.keymap.set('i', '<C-A>', 'copilot#Accept("\\<CR>")', {
-  expr = true,
-  replace_keycodes = false
-})
-vim.g.copilot_no_tab_map = true
-vim.keymap.set('i', '<C-T>', '<Plug>(copilot-accept-word)')
-vim.keymap.set('n', '<space>cd', '<cmd>Copilot disable<CR>', { desc = "Disable copilot" })
-vim.keymap.set('n', '<space>ce', '<cmd>Copilot enable<CR>', { desc = "Enable copilot" })
+-- vim.keymap.set('i', '<C-A>', 'copilot#Accept("\\<CR>")', {
+--   expr = true,
+--   replace_keycodes = false
+-- })
+-- vim.g.copilot_no_tab_map = true
+-- vim.keymap.set('i', '<C-T>', '<Plug>(copilot-accept-word)')
+-- vim.keymap.set('n', '<space>cd', '<cmd>Copilot disable<CR>', { desc = "Disable copilot" })
+-- vim.keymap.set('n', '<space>ce', '<cmd>Copilot enable<CR>', { desc = "Enable copilot" })
