@@ -106,7 +106,7 @@ input type:keyboard {
     bindsym $mod+g exec ghostty
 
     # Start firefox
-    bindsym $mod+f exec firefox
+    # bindsym $mod+f exec firefox
 
     # Start zen browser
     bindsym $mod+z exec flatpak run app.zen_browser.zen
