@@ -17,7 +17,7 @@ config.color_scheme = 'Catppuccin Macchiato'
 
 -- Font
 config.font = wezterm.font('IosevkaTerm Nerd Font')
-config.font_size = 13
+config.font_size = 14
 
 -- Scrollback lines
 config.scrollback_lines = 1000000
