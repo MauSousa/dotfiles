@@ -17,6 +17,7 @@ alias crd="composer run dev"
 alias run15="ollama run deepseek-r1:1.5b"
 alias gemma3="ollama run gemma3"
 alias pestp="./vendor/bin/pest --parallel 2>/dev/null"
+alias pest="./vendor/bin/pest"
 
 # zoxide
 eval "$(zoxide init bash)"
