@@ -95,7 +95,7 @@ button:hover {
 #power-profiles-daemon,
 #memory,
 #mpd {
-    padding: 0 10px;
+    padding: 0 8px;
     color: #ffffff;
 }
 
@@ -147,7 +147,7 @@ button:hover {
 }
 
 #power-profiles-daemon {
-    padding-right: 15px;
+    /*padding-right: 15px;*/
 }
 
 #power-profiles-daemon.performance {
@@ -188,6 +188,7 @@ label:focus {
 }
 
 #network {
+    padding: 0px;
     /*background-color: #2980b9;*/
 }
 
