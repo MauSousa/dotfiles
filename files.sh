@@ -95,6 +95,12 @@ function copy-dunst() {
     fi
 }
 
+function copy-zed() {
+    if [[ -d ~/.config/dunst ]]; then
+        cp -r ~/.config/zed "$DOTFILES_DIR"
+    fi
+}
+
 function copy-files() {
     copy-neovim
     copy-bash
@@ -109,6 +115,7 @@ function copy-files() {
     copy-swaylock
     copy-rofi
     copy-dunst
+    copy-zed
 }
 
 echo "Copying files..."
