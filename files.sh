@@ -96,8 +96,14 @@ function copy-dunst() {
 }
 
 function copy-zed() {
-    if [[ -d ~/.config/dunst ]]; then
+    if [[ -d ~/.config/zed ]]; then
         cp -r ~/.config/zed "$DOTFILES_DIR"
+    fi
+}
+
+function copy-ghostty() {
+    if [[ -d ~/.config/ghostty ]]; then
+        cp -r ~/.config/ghostty "$DOTFILES_DIR"
     fi
 }
 
@@ -116,6 +122,7 @@ function copy-files() {
     copy-rofi
     copy-dunst
     copy-zed
+    copy-ghostty
 }
 
 echo "Copying files..."
