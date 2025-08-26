@@ -107,6 +107,18 @@ function copy-ghostty() {
     fi
 }
 
+function copy-wofi() {
+    if [[ -d ~/.config/wofi ]]; then
+        cp -r ~/.config/wofi "$DOTFILES_DIR"
+    fi
+}
+
+function copy-scripts() {
+    if [[ -d ~/.local/bin ]]; then
+        cp ~/.local/bin/*.sh "$DOTFILES_DIR"/scripts
+    fi
+}
+
 function copy-files() {
     copy-neovim
     copy-bash
@@ -123,6 +135,8 @@ function copy-files() {
     copy-dunst
     copy-zed
     copy-ghostty
+    copy-wofi
+    copy-scripts
 }
 
 echo "Copying files..."
